@@ -3,7 +3,7 @@ import { useContext, useState } from 'react';
 import { Contex } from '../ContexApi/Contex';
 
 const Navbar = () => {
-  const {user, logOut} = useContext(Contex)
+  const { user, logOut } = useContext(Contex)
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -22,19 +22,15 @@ const Navbar = () => {
           <NavLink to="/all-visas" className="hover:underline">
             All Visas
           </NavLink>
-          {user && (
-            <div className='md:flex space-x-4'>
-              <NavLink to="/add-visa" className="hover:underline">
-                Add Visa
-              </NavLink>
-              <NavLink to="/my-added-visas" className="hover:underline">
-                My Added Visas
-              </NavLink>
-              <NavLink to="/my-visa-applications" className="hover:underline">
-                My Visa Applications
-              </NavLink>
-            </div>
-          )}
+          <NavLink to="/add-visa" className="hover:underline">
+            Add Visa
+          </NavLink>
+          <NavLink to="/my-added-visas" className="hover:underline">
+            My Added Visas
+          </NavLink>
+          <NavLink to="/my-visa-applications" className="hover:underline">
+            My Visa Applications
+          </NavLink>
           {user ? (
             <button
               onClick={logOut}
@@ -82,19 +78,15 @@ const Navbar = () => {
           <NavLink to="/all-visas" className="block hover:underline">
             All Visas
           </NavLink>
-          {user && (
-            <>
-              <NavLink to="/add-visa" className="block hover:underline">
-                Add Visa
-              </NavLink>
-              <NavLink to="/my-added-visas" className="block hover:underline">
-                My Added Visas
-              </NavLink>
-              <NavLink to="/my-visa-applications" className="block hover:underline">
-                My Visa Applications
-              </NavLink>
-            </>
-          )}
+          <NavLink to="/add-visa" className="block hover:underline">
+            Add Visa
+          </NavLink>
+          <NavLink to="/my-added-visas" className="block hover:underline">
+            My Added Visas
+          </NavLink>
+          <NavLink to="/my-visa-applications" className="block hover:underline">
+            My Visa Applications
+          </NavLink>
           {user ? (
             <button
               onClick={logOut}
