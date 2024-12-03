@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 
 import { Navigate, useLocation } from 'react-router-dom'
-import { Contex } from '../Components/ContexApi/Contex'
+import { Contex } from '../ContexApi/Contex'
+
 
 const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(Contex)

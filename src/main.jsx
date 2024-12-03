@@ -16,6 +16,7 @@ import PrivateRoute from './Components/PrivateRoutes/PrivateRoute';
 import AddVisa from './Components/PrivateRoutes/PrivateRouteComponents/AddVisa';
 import MyAddedVisas from './Components/PrivateRoutes/PrivateRouteComponents/MyAddedVisas';
 import MyVisaApplications from './Components/PrivateRoutes/PrivateRouteComponents/MyVisaApplications';
+import ErrorPage from './Components/Home/Error';
 
 
 
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: "/register",
