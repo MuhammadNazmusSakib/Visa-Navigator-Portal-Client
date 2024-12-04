@@ -140,11 +140,11 @@ const Register = () => {
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
               required
             />
-            <buttton onClick={handleSeePassword} className="absolute mt-2 -ml-10 text-2xl">
+            <button onClick={handleSeePassword} className="absolute mt-2 -ml-10 text-2xl">
               {
                 !seePassword ? <IoEyeOffSharp /> : <IoEyeSharp />
               }
-            </buttton>
+            </button>
 
             {error.name && (
               <p className="text-red-500 text-sm mt-1">{error.name}</p>

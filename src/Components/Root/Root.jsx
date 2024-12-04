@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 import Navbar from '../Home/navbar'
 import Footer from '../Home/Footer'
 
+
 const Root = () => {
   return (
     <div>

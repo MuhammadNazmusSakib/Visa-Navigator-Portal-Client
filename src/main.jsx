@@ -17,6 +17,9 @@ import AddVisa from './Components/PrivateRoutes/PrivateRouteComponents/AddVisa';
 import MyAddedVisas from './Components/PrivateRoutes/PrivateRouteComponents/MyAddedVisas';
 import MyVisaApplications from './Components/PrivateRoutes/PrivateRouteComponents/MyVisaApplications';
 import ErrorPage from './Components/Home/Error';
+import Home from './Components/Home/Home';
+import VisaDetails from './Components/PrivateRoutes/PrivateRouteComponents/VisaDetails';
+
 
 
 
@@ -24,8 +27,12 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
+      {
+        path: "/",
+        element: <Home />
+      },
       {
         path: "/register",
         element: <Register />
@@ -36,13 +43,24 @@ const router = createBrowserRouter([
       },
       {
         path: "/all-visas",
-        element: <AllVisas />
+        element: <AllVisas />,
+        loader: () => fetch('http://localhost:5000/addedVisaData')
+      },
+      {
+        path: "/visa-details/:id",
+        element: (
+          <PrivateRoute>
+            <VisaDetails />
+          </PrivateRoute>
+        ),
+        loader: ({params}) => fetch(`http://localhost:5000/addedVisaData/${params.id}`)
+
       },
       {
         path: "/add-visa",
         element: (
           <PrivateRoute>
-            <AddVisa/>
+            <AddVisa />
           </PrivateRoute>
         )
       },
@@ -50,7 +68,7 @@ const router = createBrowserRouter([
         path: "/my-added-visas",
         element: (
           <PrivateRoute>
-            <MyAddedVisas/>
+            <MyAddedVisas />
           </PrivateRoute>
         )
       },
@@ -58,7 +76,7 @@ const router = createBrowserRouter([
         path: "/my-visa-applications",
         element: (
           <PrivateRoute>
-            <MyVisaApplications/>
+            <MyVisaApplications />
           </PrivateRoute>
         )
       },

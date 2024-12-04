@@ -40,7 +40,7 @@ const DataProvider = ({ children }) => {
   }
 
   const dataInfo = {
-    user, setUser, createNewUser, logOut, userLogin, googleSignIn
+    user, setUser, createNewUser, logOut, userLogin, googleSignIn, loading
   }
   return (
     <Contex.Provider value={dataInfo}>
