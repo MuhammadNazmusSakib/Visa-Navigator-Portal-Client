@@ -28,7 +28,7 @@ const Navbar = () => {
           <NavLink to="/my-added-visas" className="hover:underline">
             My Added Visas
           </NavLink>
-          <NavLink to="/my-visa-applications" className="hover:underline">
+          <NavLink to={`/my-visa-applications/${user.email}`} className="hover:underline">
             My Visa Applications
           </NavLink>
           {user ? (

@@ -14,6 +14,15 @@ const VisaDetailsPage = () => {
         lastName: "",
         appliedDate: format(new Date(), "yyyy-MM-dd"), // Current date
         fee: visaDetails.fee,
+        countryImage: visaDetails.countryImage,
+        countryName: visaDetails.countryName,
+        processingTime: visaDetails.processingTime,
+        visaType: visaDetails.visaType,
+        description: visaDetails.description,
+        ageRestriction: visaDetails.ageRestriction,
+        validity: visaDetails.validity,
+        applicationMethod: visaDetails.applicationMethod,
+
     });
 
     const handleInputChange = (e) => {
