@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Contex } from './Contex'
 import { auth } from '../Firebase/Firebase.init'
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 
 
 const DataProvider = ({ children }) => {
 
-  const [user, setUser] = useState()
+  const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
 
   // creating new user
@@ -22,6 +22,11 @@ const DataProvider = ({ children }) => {
       unSubscribe()
     }
   }, [])
+
+    // update user profile
+    const updateUserProfile = (updateData) => {
+      return updateProfile(auth.currentUser, updateData)
+    }
 
   // login with existing account
   const userLogin = (email, password) => {
@@ -40,7 +45,7 @@ const DataProvider = ({ children }) => {
   }
 
   const dataInfo = {
-    user, setUser, createNewUser, logOut, userLogin, googleSignIn, loading
+    user, setUser, createNewUser, logOut, userLogin, googleSignIn, loading, updateUserProfile
   }
   return (
     <Contex.Provider value={dataInfo}>

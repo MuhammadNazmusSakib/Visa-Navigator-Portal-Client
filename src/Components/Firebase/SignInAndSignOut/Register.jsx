@@ -1,81 +1,90 @@
-import React, { useContext, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { Contex } from '../../ContexApi/Contex';
-import { toast } from 'react-toastify';
-import { IoEyeOffSharp, IoEyeSharp } from 'react-icons/io5';
+import React, { useContext, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Contex } from "../../ContexApi/Contex";
+import { toast } from "react-toastify";
+import { IoEyeOffSharp, IoEyeSharp } from "react-icons/io5";
 
 const Register = () => {
   const navigate = useNavigate();
-  const location = useLocation()
-  const { setUser, createNewUser, updateUserProfile, googleSignIn } = useContext(Contex)
-  const [error, setError] = useState({})
-  const [seePassword, setSeePassword] = useState(false)
+  const location = useLocation();
+  const { setUser, createNewUser, googleSignIn, updateUserProfile } = useContext(Contex);
+  const [error, setError] = useState("");
+  const [seePassword, setSeePassword] = useState(false);
 
-  // see Password
-  const handleSeePassword = () => setSeePassword((prev) => (!prev))
+  // Handle password visibility toggle
+  const handleSeePassword = () => {
+    setSeePassword((prev) => !prev);
+  };
 
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const form = new FormData(e.target)
-    const name = form.get("name")
-    const email = form.get("email")
-    const photo = form.get("photo")
-    const password = form.get("password")
+    const form = new FormData(e.target);
+    const name = form.get("name");
+    const email = form.get("email");
+    const photo = form.get("photo");
+    const password = form.get("password");
+
+    // Password validation
     if (password.length < 6) {
-      setError({ ...error, name: 'Password must be at least 6 characters long.' })
-      return
+      setError("Password must be at least 6 characters long.");
+      return;
     }
     if (!/[A-Z]/.test(password)) {
-      setError({ ...error, name: 'Password must have at least one uppercase letter.' })
-      return
+      setError("Password must have at least one uppercase letter.");
+      return;
     }
     if (!/[a-z]/.test(password)) {
-      setError({ ...error, name: 'Password must have at least one lowercase letter.' })
-      return
+      setError("Password must have at least one lowercase letter.");
+      return;
     }
+    setError(""); // Clear any previous errors
 
-
+    // Create a new user
     createNewUser(email, password)
-      .then(result => {
-        const user = result.user
-        setUser(user)
+      .then((result) => {
+        const user = result.user;
 
+        // Update the user's profile with displayName and photoURL
         updateUserProfile({ displayName: name, photoURL: photo })
           .then(() => {
-            const redirectPath = location.state?.from || "/"
-            navigate(redirectPath)
-          }).catch(() => {
-            toast("Failed!!")
+            setUser({
+              ...user,
+              displayName: name,
+              photoURL: photo,
+            });
+
+            // Redirect to the intended page
+            const redirectPath = location.state?.from || "/";
+            navigate(redirectPath);
+
+            toast.success("Account created successfully!");
           })
+          .catch(() => {
+            toast.error("Failed to update profile. Please try again.");
+          });
       })
       .catch(() => {
-        toast("Registar Failed ! Please try again.", {
-          position: "top-center",
-          autoClose: 2000, // Close after 2 seconds
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        toast.error("Registration failed. Please try again.");
       });
   };
 
-  //  Handle Google Login 
+  // Handle Google login
   const handleGoogleLogin = () => {
     googleSignIn()
       .then((result) => {
-        const user = result.user
-        setUser(user)
+        const user = result.user;
+        setUser(user);
 
-        const redirectPath = location.state?.from || "/"
-        navigate(redirectPath)
+        const redirectPath = location.state?.from || "/";
+        navigate(redirectPath);
+
+        toast.success("Logged in with Google!");
       })
       .catch(() => {
-        toast('Google login Failed. Please try again.');
-      })
+        toast.error("Google login failed. Please try again.");
+      });
   };
 
   return (
@@ -123,12 +132,13 @@ const Register = () => {
               name="photo"
               type="url"
               placeholder="Enter a photo URL"
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+              required
             />
           </div>
 
           {/* Password Input */}
-          <div className="mb-6">
+          <div className="mb-6 relative">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
               Password
             </label>
@@ -140,15 +150,14 @@ const Register = () => {
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
               required
             />
-            <button onClick={handleSeePassword} className="absolute mt-2 -ml-10 text-2xl">
-              {
-                !seePassword ? <IoEyeOffSharp /> : <IoEyeSharp />
-              }
+            <button
+              type="button"
+              onClick={handleSeePassword}
+              className="absolute right-3 top-9 text-2xl"
+            >
+              {seePassword ? <IoEyeSharp /> : <IoEyeOffSharp />}
             </button>
-
-            {error.name && (
-              <p className="text-red-500 text-sm mt-1">{error.name}</p>
-            )}
+            {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
           </div>
 
           {/* Register Button */}
@@ -172,10 +181,10 @@ const Register = () => {
 
         {/* Redirect to Login */}
         <div className="text-center text-sm text-gray-600 mt-4">
-          Already have an account?{' '}
+          Already have an account?{" "}
           <button
             className="text-blue-500 hover:underline"
-            onClick={() => navigate('/login')}
+            onClick={() => navigate("/login")}
           >
             Log in
           </button>
