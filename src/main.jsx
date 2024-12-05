@@ -79,7 +79,7 @@ const router = createBrowserRouter([
             <MyVisaApplications />
           </PrivateRoute>
         ),
-        loader: ({params}) => fetch(`http://localhost:5000/applicationData/email/${params.email}`)
+        // loader: ({params}) => fetch(`http://localhost:5000/applicationData/email/${params.email}`)
       },
     ]
   }
