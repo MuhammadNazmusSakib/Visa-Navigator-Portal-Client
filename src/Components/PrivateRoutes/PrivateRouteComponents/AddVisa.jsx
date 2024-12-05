@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Swal from "sweetalert2";
+import { Contex } from "../../ContexApi/Contex";
 
 
 const AddVisa = () => {
+const {user} = useContext(Contex)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -15,13 +17,14 @@ const AddVisa = () => {
     const fee = e.target.fee.value
     const validity = e.target.validity.value
     const applicationMethod = e.target.applicationMethod.value
+    const email = user.email
 
     // Collect selected checkboxes
     const requiredDocuments = Array.from(
       e.target.querySelectorAll('input[type="checkbox"]:checked')
     ).map((checkbox) => checkbox.nextSibling.textContent.trim())
 
-    const addedVisaData = { countryImage, countryName, processingTime, visaType, description, ageRestriction, fee, validity, applicationMethod, requiredDocuments }
+    const addedVisaData = { countryImage, countryName, processingTime, visaType, description, ageRestriction, fee, validity, applicationMethod, requiredDocuments, email }
     // console.log(addedVisaData)
 
     // send data to server

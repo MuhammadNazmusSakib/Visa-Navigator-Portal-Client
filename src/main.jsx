@@ -70,10 +70,12 @@ const router = createBrowserRouter([
           <PrivateRoute>
             <MyAddedVisas />
           </PrivateRoute>
-        )
+        ),
+        loader: () => fetch('http://localhost:5000/addedVisaData')
       },
       {
-        path: "/my-visa-applications/:email",
+        // path: "/my-visa-applications/:email",
+        path: "/my-visa-applications/email",
         element: (
           <PrivateRoute>
             <MyVisaApplications />

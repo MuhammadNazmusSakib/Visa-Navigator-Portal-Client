@@ -120,7 +120,7 @@ import { Contex } from '../ContexApi/Contex';
 const Navbar = () => {
   const { user, logOut } = useContext(Contex);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  console.log(user)
+  console.log(user?.email)
 
   return (
     <nav className="bg-blue-600 text-white shadow-lg">
@@ -144,7 +144,8 @@ const Navbar = () => {
           <NavLink to="/my-added-visas" className="hover:underline">
             My Added Visas
           </NavLink>
-          <NavLink to={`/my-visa-applications/${user?.email}`} className="hover:underline">
+          {/* `/my-visa-applications/${user?.email}` */}
+          <NavLink to={`/my-visa-applications/email`} className="hover:underline">
             My Visa Applications
           </NavLink>
           {user ? (
