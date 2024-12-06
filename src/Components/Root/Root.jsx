@@ -6,7 +6,7 @@ import Footer from '../Home/Footer'
 
 const Root = () => {
   return (
-    <div>
+    <div className='min-h-screen bg-base-200 text-base-content'>
         <Navbar/>
         <Outlet/>
         <Footer/>

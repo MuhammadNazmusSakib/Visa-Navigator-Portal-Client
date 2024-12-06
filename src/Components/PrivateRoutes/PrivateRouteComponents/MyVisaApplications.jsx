@@ -59,7 +59,7 @@ const MyVisaApplications = () => {
       ) : applications.length === 0 ? (
         <div className="text-gray-600 h-screen">
           <h2 className="text-2xl">No Visa Applications Found</h2>
-          <p className="mt-5">You have not applied for any visas yet.</p>
+          <p className="mt-5">You have not applied for any visa yet.</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

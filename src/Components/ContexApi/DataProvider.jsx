@@ -9,6 +9,23 @@ const DataProvider = ({ children }) => {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
 
+  const [theme, setTheme] = useState('light');
+
+  // Set initial theme based on localStorage or default to light
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }, []);
+
+  // Toggle theme between light and dark
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  };
+
   // creating new user
   const createNewUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password)
@@ -45,7 +62,7 @@ const DataProvider = ({ children }) => {
   }
 
   const dataInfo = {
-    user, setUser, createNewUser, logOut, userLogin, googleSignIn, loading, updateUserProfile
+    user, setUser, createNewUser, logOut, userLogin, googleSignIn, loading, updateUserProfile, toggleTheme, theme
   }
   return (
     <Contex.Provider value={dataInfo}>
