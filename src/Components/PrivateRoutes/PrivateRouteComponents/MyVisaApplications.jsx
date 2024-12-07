@@ -63,7 +63,9 @@ const MyVisaApplications = () => {
     <div className="p-8 bg-gray-100">
       <h1 className="text-3xl font-bold mb-6 text-center">My Visa Applications</h1>
       {isLoading ? (
-        <div className="text-center text-gray-600">Loading applications...</div>
+        <div className="flex items-center justify-center min-h-screen bg-gray-100">
+          <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent border-solid rounded-full animate-spin"></div>
+        </div>
       ) : filteredApplications.length === 0 ? (
         <div className="text-gray-600 h-screen">
           {/* Search Bar */}

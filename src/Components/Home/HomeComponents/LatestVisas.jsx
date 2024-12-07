@@ -21,7 +21,7 @@ const LatestVisas = () => {
         {visas.map((visa) => (
           <div
             key={visa._id}
-            className="bg-white shadow-md rounded-lg p-4 flex flex-col"
+            className="border border-fuchsia-400 shadow-md rounded-lg p-4 flex flex-col"
           >
             <img
               src={visa.countryImage}
