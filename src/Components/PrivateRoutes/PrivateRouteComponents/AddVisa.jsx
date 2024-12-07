@@ -50,18 +50,18 @@ const {user} = useContext(Contex)
   };
 
   return (
-    <div className="p-8 bg-gray-100">
+    <div className="px-4 py-8">
       <h1 className="text-3xl font-bold text-center mb-6">Add Visa</h1>
       <form
         onSubmit={handleSubmit}
-        className="max-w-xl mx-auto bg-white shadow-md rounded p-6"
+        className="max-w-xl mx-auto bg-gray-300 text-black shadow-md rounded p-6"
       >
         <div className="mb-4">
           <label className="block font-semibold mb-2">Country Image URL</label>
           <input
             type="text"
             name="countryImage"
-            className="w-full border border-gray-300 rounded px-3 py-2"
+            className="w-full border border-gray-300 bg-gray-50 rounded px-3 py-2"
             required
           />
         </div>
@@ -71,7 +71,7 @@ const {user} = useContext(Contex)
           <input
             type="text"
             name="countryName"
-            className="w-full border border-gray-300 rounded px-3 py-2"
+            className="w-full border border-gray-300 bg-gray-50 rounded px-3 py-2"
             required
           />
         </div>
@@ -80,7 +80,7 @@ const {user} = useContext(Contex)
           <label className="block font-semibold mb-2">Visa Type</label>
           <select
             name="visaType"
-            className="w-full border border-gray-300 rounded px-3 py-2"
+            className="w-full border border-gray-300 bg-gray-50 rounded px-3 py-2"
           >
             <option value="Tourist visa">Tourist Visa</option>
             <option value="Student visa">Student Visa</option>
@@ -93,7 +93,7 @@ const {user} = useContext(Contex)
           <input
             type="text"
             name="processingTime"
-            className="w-full border border-gray-300 rounded px-3 py-2"
+            className="w-full border border-gray-300 bg-gray-50 rounded px-3 py-2"
             required
           />
         </div>
@@ -126,7 +126,7 @@ const {user} = useContext(Contex)
           <label className="block font-semibold mb-2">Description</label>
           <textarea
             name="description"
-            className="w-full border border-gray-300 rounded px-3 py-2"
+            className="w-full border border-gray-300 bg-gray-50 rounded px-3 py-2"
             rows="3"
             required
           />
@@ -137,7 +137,7 @@ const {user} = useContext(Contex)
           <input
             type="number"
             name="ageRestriction"
-            className="w-full border border-gray-300 rounded px-3 py-2"
+            className="w-full border border-gray-300 bg-gray-50 rounded px-3 py-2"
             required
           />
         </div>
@@ -147,7 +147,7 @@ const {user} = useContext(Contex)
           <input
             type="number"
             name="fee"
-            className="w-full border border-gray-300 rounded px-3 py-2"
+            className="w-full border border-gray-300 bg-gray-50 rounded px-3 py-2"
             required
           />
         </div>
@@ -157,7 +157,7 @@ const {user} = useContext(Contex)
           <input
             type="text"
             name="validity"
-            className="w-full border border-gray-300 rounded px-3 py-2"
+            className="w-full border border-gray-300 bg-gray-50 rounded px-3 py-2"
             required
           />
         </div>
@@ -167,7 +167,7 @@ const {user} = useContext(Contex)
           <input
             type="text"
             name="applicationMethod"
-            className="w-full border border-gray-300 rounded px-3 py-2"
+            className="w-full border border-gray-300 bg-gray-50 rounded px-3 py-2"
             required
           />
         </div>

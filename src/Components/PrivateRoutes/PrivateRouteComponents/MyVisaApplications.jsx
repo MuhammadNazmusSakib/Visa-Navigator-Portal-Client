@@ -60,14 +60,14 @@ const MyVisaApplications = () => {
   };
 
   return (
-    <div className="p-8 bg-gray-100">
+    <div className="py-8 px-4">
       <h1 className="text-3xl font-bold mb-6 text-center">My Visa Applications</h1>
       {isLoading ? (
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
           <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent border-solid rounded-full animate-spin"></div>
         </div>
       ) : filteredApplications.length === 0 ? (
-        <div className="text-gray-600 h-screen">
+        <div className=" h-screen">
           {/* Search Bar */}
           <div className="mb-6 flex justify-center items-center">
             <input
@@ -103,14 +103,14 @@ const MyVisaApplications = () => {
             {filteredApplications.map((application) => (
               <div
                 key={application._id} // Unique key
-                className="bg-white shadow-md rounded p-4"
+                className="bg-white text-gray-600 shadow-md rounded p-4"
               >
                 <img
                   src={application.countryImage}
                   alt={application.countryName}
                   className="w-full h-40 object-cover rounded mb-4"
                 />
-                <h2 className="text-xl font-bold mb-2">{application.countryName}</h2>
+                <h2 className="text-xl text-gray-800 font-bold mb-2">{application.countryName}</h2>
                 <p>
                   <strong>Visa Type:</strong> {application.visaType}
                 </p>

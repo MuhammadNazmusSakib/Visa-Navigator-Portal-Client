@@ -51,32 +51,32 @@ const Modal = ({ isOpen, onClose, visaData, setMyAddedVisa, myAddedVisa }) => {
     return (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
             <div className="bg-white p-6 rounded shadow-lg w-full max-w-md max-h-screen overflow-y-auto">
-                <h2 className="text-2xl font-bold mb-4">Apply for the Visa</h2>
+                <h2 className="text-black text-2xl font-bold mb-4">Apply for the Visa</h2>
 
                 <form
                     onSubmit={handleSubmit}
-                    className="max-w-xl mx-auto bg-white shadow-md rounded p-6"
+                    className="max-w-xl mx-auto bg-white shadow-md rounded text-black p-6"
                 >
-                    <div className="mb-4">
+                    <div className="mb-4 ">
                         <label className="block font-semibold mb-2">Country Image URL</label>
                         <input
                             type="text"
                             name="countryImage"
                             value={formData.countryImage}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded px-3 py-2"
+                            className="w-full bg-gray-100 border border-gray-300 rounded px-3 py-2"
                             required
                         />
                     </div>
 
-                    <div className="mb-4">
+                    <div className="mb-4 ">
                         <label className="block font-semibold mb-2">Country Name</label>
                         <input
                             type="text"
                             name="countryName"
                             value={formData.countryName}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded px-3 py-2"
+                            className="w-full bg-gray-100 border border-gray-300 rounded px-3 py-2"
                             required
                         />
                     </div>
@@ -87,7 +87,7 @@ const Modal = ({ isOpen, onClose, visaData, setMyAddedVisa, myAddedVisa }) => {
                             name="visaType"
                             value={formData.visaType}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded px-3 py-2"
+                            className="w-full bg-gray-100 border border-gray-300 rounded px-3 py-2"
                         >
                             <option value="Tourist visa">Tourist Visa</option>
                             <option value="Student visa">Student Visa</option>
@@ -102,7 +102,7 @@ const Modal = ({ isOpen, onClose, visaData, setMyAddedVisa, myAddedVisa }) => {
                             name="processingTime"
                             value={formData.processingTime}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded px-3 py-2"
+                            className="w-full bg-gray-100 border border-gray-300 rounded px-3 py-2"
                             required
                         />
                     </div>
@@ -143,7 +143,7 @@ const Modal = ({ isOpen, onClose, visaData, setMyAddedVisa, myAddedVisa }) => {
                             name="description"
                             value={formData.description}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded px-3 py-2"
+                            className="w-full bg-gray-100 border border-gray-300 rounded px-3 py-2"
                             rows="3"
                             required
                         />
@@ -156,7 +156,7 @@ const Modal = ({ isOpen, onClose, visaData, setMyAddedVisa, myAddedVisa }) => {
                             name="ageRestriction"
                             value={formData.ageRestriction}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded px-3 py-2"
+                            className="w-full bg-gray-100 border border-gray-300 rounded px-3 py-2"
                             required
                         />
                     </div>
@@ -168,7 +168,7 @@ const Modal = ({ isOpen, onClose, visaData, setMyAddedVisa, myAddedVisa }) => {
                             name="fee"
                             value={formData.fee}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded px-3 py-2"
+                            className="w-full bg-gray-100 border border-gray-300 rounded px-3 py-2"
                             required
                         />
                     </div>
@@ -180,7 +180,7 @@ const Modal = ({ isOpen, onClose, visaData, setMyAddedVisa, myAddedVisa }) => {
                             name="validity"
                             value={formData.validity}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded px-3 py-2"
+                            className="w-full border bg-gray-100 border-gray-300 rounded px-3 py-2"
                             required
                         />
                     </div>
@@ -192,7 +192,7 @@ const Modal = ({ isOpen, onClose, visaData, setMyAddedVisa, myAddedVisa }) => {
                             name="applicationMethod"
                             value={formData.applicationMethod}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded px-3 py-2"
+                            className="w-full bg-gray-100 border border-gray-300 rounded px-3 py-2"
                             required
                         />
                     </div>

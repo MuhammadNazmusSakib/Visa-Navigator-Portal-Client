@@ -62,7 +62,7 @@ const VisaDetailsPage = () => {
     };
 
     return (
-        <div className="p-8 bg-gray-100">
+        <div className="py-8 px-4">
             <div className="w-10/12 mx-auto flex flex-col items-center">
                 {/* Visa Details Section */}
                 <h1 className="text-3xl font-bold mb-6">{visaDetails.countryName} Visa</h1>
@@ -110,9 +110,9 @@ const VisaDetailsPage = () => {
                 {isModalOpen && (
                     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
                         <div className="bg-white p-6 rounded shadow-lg w-full max-w-md">
-                            <h2 className="text-2xl font-bold mb-4">Apply for the Visa</h2>
+                            <h2 className="text-2xl text-black font-bold mb-4">Apply for the Visa</h2>
                             <form onSubmit={handleApply}>
-                                <div className="mb-4">
+                                <div className="mb-4 text-black">
                                     <label className="block font-semibold mb-2">Email</label>
                                     <input
                                         type="email"
@@ -122,7 +122,7 @@ const VisaDetailsPage = () => {
                                         className="w-full border border-gray-300 rounded px-3 py-2 bg-gray-100"
                                     />
                                 </div>
-                                <div className="mb-4">
+                                <div className="mb-4 text-black">
                                     <label className="block font-semibold mb-2">First Name</label>
                                     <input
                                         type="text"
@@ -130,10 +130,10 @@ const VisaDetailsPage = () => {
                                         value={applicationData.firstName}
                                         onChange={handleInputChange}
                                         required
-                                        className="w-full border border-gray-300 rounded px-3 py-2"
+                                        className="w-full bg-gray-100 border border-gray-300 rounded px-3 py-2"
                                     />
                                 </div>
-                                <div className="mb-4">
+                                <div className="mb-4 text-black">
                                     <label className="block font-semibold mb-2">Last Name</label>
                                     <input
                                         type="text"
@@ -141,10 +141,10 @@ const VisaDetailsPage = () => {
                                         value={applicationData.lastName}
                                         onChange={handleInputChange}
                                         required
-                                        className="w-full border border-gray-300 rounded px-3 py-2"
+                                        className="w-full bg-gray-100 border border-gray-300 rounded px-3 py-2"
                                     />
                                 </div>
-                                <div className="mb-4">
+                                <div className="mb-4 text-black">
                                     <label className="block font-semibold mb-2">Applied Date</label>
                                     <input
                                         type="text"
@@ -154,7 +154,7 @@ const VisaDetailsPage = () => {
                                         className="w-full border border-gray-300 rounded px-3 py-2 bg-gray-100"
                                     />
                                 </div>
-                                <div className="mb-4">
+                                <div className="mb-4 text-black">
                                     <label className="block font-semibold mb-2">Fee</label>
                                     <input
                                         type="text"

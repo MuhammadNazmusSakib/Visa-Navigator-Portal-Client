@@ -9,7 +9,6 @@ import { toast } from "react-toastify";
 const Login = () => {
 
   const { userLogin, setUser, googleSignIn } = useContext(Contex)
-//   const [forgotPassword, setForgotPassword] = useState(false)
   const [seePassword, setSeePassword] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
@@ -31,13 +30,11 @@ const Login = () => {
       })
   };
 
-  // Forgot Password?.......
-//   const handleNavigateToForgotPassword = () => {
-//     setForgotPassword(true)
-//   }
 
   // see Password
-  const handleSeePassword = () => setSeePassword((prev) => (!prev))
+  const handleSeePassword = () => {
+    setSeePassword((prev) => (!prev))
+  }
 
 
   const handleSubmit = (e) => {
@@ -46,11 +43,6 @@ const Login = () => {
     const form = new FormData(e.target)
     const email = form.get("email")
     const password = form.get("password")
-
-    // Forgot Password...
-    // if (forgotPassword) {
-    //   return navigate('/forgot-password', { state: { email } })
-    // }
 
 
     userLogin(email, password)
@@ -81,7 +73,7 @@ const Login = () => {
 
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-green-200">
+    <div className="flex justify-center items-center min-h-screen">
       <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
         {/* Title */}
         <h1 className="text-2xl font-bold text-center mb-6">
@@ -124,7 +116,7 @@ const Login = () => {
               type="email"
               id="email"
               name="email"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
               placeholder="Enter your email"
             />
           </div>
@@ -136,16 +128,16 @@ const Login = () => {
               Password
             </label>
             <input
-              type={!seePassword? "password" : "text"}
+              type={!seePassword ? "password" : "text"}
               id="password"
               name="password"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
               placeholder="Enter your password"
             />
-            <button onClick={handleSeePassword} className="absolute mt-2 -ml-10 text-2xl">
-              {
-                !seePassword? <IoEyeOffSharp /> : <IoEyeSharp />
-              }
+            <button type="button" onClick={handleSeePassword}
+              className="absolute mt-2 -ml-10 text-2xl">
+              {seePassword ? <IoEyeSharp /> : <IoEyeOffSharp />}
+
             </button>
           </div>
           <div className="flex items-center justify-between mb-4">
@@ -158,7 +150,7 @@ const Login = () => {
                 Remember me on this computer
               </span>
             </label>
-            <button 
+            <button
               className="text-sm text-green-500 hover:underline"
             >
               Forgot your password?

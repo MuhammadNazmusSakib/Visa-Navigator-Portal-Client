@@ -3,9 +3,9 @@ import { Typewriter } from "react-simple-typewriter";
 
 const WelcomeSection = () => {
     return (
-        <div className="text-center py-20 light:bg-blue-100 dark:bg-gray-800">
+        <div className="text-center px-4 py-20">
             <h1 className="text-4xl font-bold mb-4">Welcome to Visa Explorer!</h1>
-            <p className="text-xl text-gray-700 dark:text-gray-300">
+            <p className="text-xl dark:text-gray-300">
                 <Typewriter
                     words={[
                         "Find the perfect visa for your destination!",
@@ -20,7 +20,7 @@ const WelcomeSection = () => {
                     delaySpeed={1000}
                 />
             </p>
-            <p className="text-xl text-gray-700 dark:text-gray-300">
+            <p className="text-xl ">
                 <Typewriter
                     words={[
 
@@ -35,7 +35,7 @@ const WelcomeSection = () => {
                     delaySpeed={1000}
                 />
             </p>
-            <p className="text-xl text-gray-700 dark:text-gray-300">
+            <p className="text-xl">
                 <Typewriter
                     words={[
                         // "Find the perfect visa for your destination!",

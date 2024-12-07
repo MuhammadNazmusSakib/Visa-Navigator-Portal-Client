@@ -88,7 +88,7 @@ const AllVisas = () => {
 
   return (
     <div>
-      <div className="p-8 bg-gray-100">
+      <div className="px-4 py-8">
         {/* Dropdown Menu for Filtering */}
         <div className="mb-6">
           <label className="mr-2 font-semibold">Filter by Visa Type:</label>
@@ -117,7 +117,7 @@ const AllVisas = () => {
                   alt={visa.countryName}
                   className="h-40 w-full object-cover rounded mb-4"
                 />
-                <h2 className="text-lg font-semibold mb-2">{visa.countryName}</h2>
+                <h2 className="text-lg text-gray-800 font-semibold mb-2">{visa.countryName}</h2>
                 <p className="text-gray-600 mb-2">
                   <strong>Visa Type:</strong> {visa.visaType}
                 </p>
