@@ -5,7 +5,7 @@ import { Contex } from '../ContexApi/Contex';
 const Navbar = () => {
   const { user, logOut, toggleTheme, theme } = useContext(Contex);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  console.log(user?.email)
+  // console.log(user?.email)
 
   return (
     <nav className="bg-blue-600 text-white shadow-lg">
