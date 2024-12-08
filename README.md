@@ -17,8 +17,8 @@
 3. **Comprehensive Visa Details**  
    Each visa includes specific details (country, type, application methods) with a "See Details" button to navigate to individual visa pages.  
 
-4. **Google Authentication**  
-   Secure Google login for fast and safe user access.  
+4. **Firebase Authentication**  
+   Secure signup & login for fast and safe user access.  
 
 5. **Responsive Design**  
    Fully optimized for mobile, tablet, and desktop, ensuring a seamless experience across all devices.  
