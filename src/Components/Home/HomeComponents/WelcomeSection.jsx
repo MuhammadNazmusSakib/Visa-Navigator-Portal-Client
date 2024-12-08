@@ -5,7 +5,7 @@ const WelcomeSection = () => {
     return (
         <div className="text-center px-4 py-20">
             <h1 className="text-4xl font-bold mb-4">Welcome to Visa Explorer!</h1>
-            <p className="text-xl dark:text-gray-300">
+            <p className="text-xl">
                 <Typewriter
                     words={[
                         "Find the perfect visa for your destination!",

@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: "/all-visas",
         element: <AllVisas />,
-        loader: () => fetch('http://localhost:5000/addedVisaData')
+        loader: () => fetch('https://visa-navigator-portal-server-five.vercel.app/addedVisaData')
       },
       {
         path: "/visa-details/:id",
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
             <VisaDetails />
           </PrivateRoute>
         ),
-        loader: ({params}) => fetch(`http://localhost:5000/addedVisaData/${params.id}`)
+        loader: ({params}) => fetch(`https://visa-navigator-portal-server-five.vercel.app/addedVisaData/${params.id}`)
 
       },
       {
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
             <MyAddedVisas />
           </PrivateRoute>
         ),
-        loader: () => fetch('http://localhost:5000/addedVisaData')
+        loader: () => fetch('https://visa-navigator-portal-server-five.vercel.app/addedVisaData')
       },
       {
         // path: "/my-visa-applications/:email",
@@ -81,7 +81,7 @@ const router = createBrowserRouter([
             <MyVisaApplications />
           </PrivateRoute>
         ),
-        // loader: ({params}) => fetch(`http://localhost:5000/applicationData/email/${params.email}`)
+        // loader: ({params}) => fetch(`https://visa-navigator-portal-server-five.vercel.app/applicationData/email/${params.email}`)
       },
     ]
   }

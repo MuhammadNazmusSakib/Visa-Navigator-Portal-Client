@@ -40,7 +40,7 @@ const VisaDetailsPage = () => {
         setIsModalOpen(false); // Close the modal after submission
 
         // send data to server
-        fetch('http://localhost:5000/applicationData', {
+        fetch('https://visa-navigator-portal-server-five.vercel.app/applicationData', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -49,7 +49,7 @@ const VisaDetailsPage = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
 
                 if (data.insertedId) {
                     Swal.fire({

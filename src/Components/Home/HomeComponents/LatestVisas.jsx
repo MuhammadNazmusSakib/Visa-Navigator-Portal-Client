@@ -7,10 +7,10 @@ const LatestVisas = () => {
 
   useEffect(() => {
     // Fetch the latest visas from the backend
-    fetch('http://localhost:5000/latestVisaData') // Adjust the URL as per your setup
+    fetch('https://visa-navigator-portal-server-five.vercel.app/latestVisaData') // Adjust the URL as per your setup
       .then((response) => response.json())
       .then((data) => setVisas(data))
-      .catch((error) => console.error('Error fetching latest visas:', error));
+      // .catch((error) => console.error('Error fetching latest visas:', error));
   }, []);
 
 

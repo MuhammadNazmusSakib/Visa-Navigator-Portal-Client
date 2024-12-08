@@ -13,7 +13,7 @@ const MyVisaApplications = () => {
   useEffect(() => {
     if (user?.email) {
       setIsLoading(true); // Start loading
-      fetch(`http://localhost:5000/applicationData/email/${user.email}`)
+      fetch(`https://visa-navigator-portal-server-five.vercel.app/applicationData/email/${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           setApplications(data);
@@ -43,7 +43,7 @@ const MyVisaApplications = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/applicationData/${id}`, {
+        fetch(`https://visa-navigator-portal-server-five.vercel.app/applicationData/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

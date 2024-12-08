@@ -21,7 +21,7 @@ const Modal = ({ isOpen, onClose, visaData, setMyAddedVisa, myAddedVisa }) => {
     // console.log(formData._id)
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:5000/addedVisaData/${formData._id}`, {
+        fetch(`https://visa-navigator-portal-server-five.vercel.app/addedVisaData/${formData._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

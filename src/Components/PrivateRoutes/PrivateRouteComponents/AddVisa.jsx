@@ -28,7 +28,7 @@ const {user} = useContext(Contex)
     // console.log(addedVisaData)
 
     // send data to server
-    fetch('http://localhost:5000/addedVisaData', {
+    fetch('https://visa-navigator-portal-server-five.vercel.app/addedVisaData', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -37,7 +37,7 @@ const {user} = useContext(Contex)
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data)
+      // console.log(data)
 
       if (data.insertedId) {
         Swal.fire({

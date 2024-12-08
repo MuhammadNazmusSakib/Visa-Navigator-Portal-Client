@@ -15,7 +15,7 @@ const MyAddedVisas = () => {
   useEffect(() => {
     if (user?.email) {
       setIsLoading(true);
-      fetch(`http://localhost:5000/addedVisaData/email/${user.email}`)
+      fetch(`https://visa-navigator-portal-server-five.vercel.app/addedVisaData/email/${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           setMyAddedVisa(data);
@@ -35,7 +35,7 @@ const MyAddedVisas = () => {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/addedVisaData/${id}`, {
+        fetch(`https://visa-navigator-portal-server-five.vercel.app/addedVisaData/${id}`, {
           method: 'DELETE',
         })
           .then((res) => res.json())

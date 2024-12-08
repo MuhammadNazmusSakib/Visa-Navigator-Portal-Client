@@ -2,6 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { Contex } from '../ContexApi/Contex';
 
+
 const Navbar = () => {
   const { user, logOut, toggleTheme, theme } = useContext(Contex);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,8 +12,9 @@ const Navbar = () => {
     <nav className="bg-blue-600 text-white shadow-lg">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         {/* Logo */}
-        <Link to="/" className="text-xl font-bold">
-          Visa Navigator
+        <Link to="/" className="flex text-xl font-bold">
+        
+        <h2>Visa Navigator</h2>
         </Link>
 
         {/* Menu for larger screens */}
