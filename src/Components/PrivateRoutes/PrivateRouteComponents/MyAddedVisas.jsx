@@ -89,16 +89,16 @@ const MyAddedVisas = () => {
               <p><strong>Fee:</strong> ${application.fee}</p>
               <p><strong>Validity:</strong> {application.validity}</p>
               <p><strong>Application Method:</strong> {application.applicationMethod}</p>
-              <div className="flex place-content-around">
+              <div className="flex gap-2">
                 <button
                   onClick={() => handleDelete(application._id)}
-                  className="mt-4 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+                  className="mt-4 w-full bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
                 >
                   Delete
                 </button>
                 <button
                   onClick={() => openModal(application)} // Pass application data
-                  className="mt-4 bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+                  className="mt-4 w-full bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
                 >
                   Update
                 </button>

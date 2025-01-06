@@ -2,19 +2,19 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center p-6 lg:p-12">
+    <div className="flex flex-col lg:flex-row items-center max-w-8xl mx-auto p-4 sm:p-6 lg:p-10">
       {/* Left Side: Image */}
       <div className="w-full lg:w-1/2">
         <img
           src="https://i.ibb.co.com/4S4m3Yv/about-us.jpg"
           alt="About Us"
-          className="rounded-lg shadow-lg w-full"
+          className="rounded-lg shadow-lg w-full h-fit"
         />
       </div>
 
       {/* Right Side: Description */}
       <div className="w-full lg:w-1/2 mt-6 lg:mt-0 lg:pl-12">
-        <h2 className="text-3xl font-bold mb-4">
+        <h2 className="text-4xl font-bold mb-4">
           About Us
         </h2>
         <p className="text-lg">

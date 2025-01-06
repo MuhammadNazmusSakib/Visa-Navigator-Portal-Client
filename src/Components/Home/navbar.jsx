@@ -28,14 +28,10 @@ const Navbar = () => {
           <NavLink to="/about-us" className="hover:underline">
             About
           </NavLink>
-          {/* <NavLink to="/my-added-visas" className="hover:underline">
-            My Added Visas
-          </NavLink> */}
-          {/* `/my-visa-applications/${user?.email}` */}
-          {/* <NavLink to={`/my-visa-applications/email`} className="hover:underline">
-            My Visa Applications
-          </NavLink> */}
-          {/* <div onClick={toggleTheme}><input type="checkbox" value="synthwave" className="toggle theme-controller" /></div> */}
+          <NavLink to="/contact" className="hover:underline">
+            Contact
+          </NavLink>
+          
           <div onClick={toggleTheme}>
             <label className="flex cursor-pointer gap-2">
               <svg

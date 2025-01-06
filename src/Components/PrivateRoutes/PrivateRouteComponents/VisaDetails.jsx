@@ -62,14 +62,14 @@ const VisaDetailsPage = () => {
     };
 
     return (
-        <div className="py-8 px-4">
+        <div className="py-8 px-2">
             <div className="w-10/12 mx-auto flex flex-col items-center">
                 {/* Visa Details Section */}
                 <h1 className="text-3xl font-bold mb-6">{visaDetails.countryName} Visa</h1>
                 <img
                     src={visaDetails.countryImage}
                     alt={visaDetails.countryName}
-                    className="w-96 h-fit object-cover mb-6"
+                    className="md:max-w-xl lg:max-w-3xl h-fit object-cover mb-6"
                 />
                 <div className="py-5">
                     <p>
@@ -109,7 +109,7 @@ const VisaDetailsPage = () => {
                 {/* Modal for Applying */}
                 {isModalOpen && (
                     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
-                        <div className="bg-white p-6 rounded shadow-lg w-full max-w-md">
+                        <div className="bg-white p-6 rounded shadow-lg w-full max-w-md max-h-screen overflow-y-auto">
                             <h2 className="text-2xl text-black font-bold mb-4">Apply for the Visa</h2>
                             <form onSubmit={handleApply}>
                                 <div className="mb-4 text-black">

@@ -21,6 +21,7 @@ import Home from './Components/Home/Home';
 import VisaDetails from './Components/PrivateRoutes/PrivateRouteComponents/VisaDetails';
 import Profile from './Components/PrivateRoutes/Profile/Profile';
 import AboutUs from './Components/Routes/AboutUs';
+import Contact from './Components/Routes/Contact';
 
 
 
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/about-us",
         element: <AboutUs/>
+      },
+      {
+        path: "/contact",
+        element: <Contact/>
       },
       {
         path: "my-profile",
