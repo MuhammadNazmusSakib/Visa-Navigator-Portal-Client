@@ -172,7 +172,7 @@ const Register = () => {
         {/* Social Login */}
         <div className="text-center mt-6">
           <button
-            className="flex items-center justify-center w-full bg-lime-500 text-white py-2 px-4 rounded-md hover:bg-lime-600 transition duration-200"
+            className="flex items-center justify-center w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200"
             onClick={handleGoogleLogin}
           >
             Sign up with Google

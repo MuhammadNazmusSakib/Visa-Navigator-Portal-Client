@@ -9,9 +9,9 @@ const Home = () => {
     <div>
         <BannerSlider/>
         <WelcomeSection/>
-        <div className='bg-gray-200 h-2'></div>
+        {/* <div className='bg-gray-200 h-2'></div> */}
         <HowItWorks/>
-        <div className='bg-gray-200 h-2'></div>
+        {/* <div className='bg-gray-200 h-2'></div> */}
         <LatestVisas/>
         
     </div>

@@ -19,6 +19,8 @@ import MyVisaApplications from './Components/PrivateRoutes/PrivateRouteComponent
 import ErrorPage from './Components/Home/Error';
 import Home from './Components/Home/Home';
 import VisaDetails from './Components/PrivateRoutes/PrivateRouteComponents/VisaDetails';
+import Profile from './Components/PrivateRoutes/Profile/Profile';
+import AboutUs from './Components/Routes/AboutUs';
 
 
 
@@ -47,6 +49,29 @@ const router = createBrowserRouter([
         loader: () => fetch('https://visa-navigator-portal-server-five.vercel.app/addedVisaData')
       },
       {
+        path: "/about-us",
+        element: <AboutUs/>
+      },
+      {
+        path: "my-profile",
+        element: <PrivateRoute><Profile/></PrivateRoute>,
+        children: [
+          {
+            path: "add-visa",
+            element: <AddVisa />
+          },
+          {
+            path: "my-added-visas",
+            element: <MyAddedVisas />,
+            loader: () => fetch('https://visa-navigator-portal-server-five.vercel.app/addedVisaData')
+          },
+          {
+            path: "my-visa-applications/email",
+            element: <MyVisaApplications />,
+          },
+        ]
+      },
+      {
         path: "/visa-details/:id",
         element: (
           <PrivateRoute>
@@ -55,33 +80,6 @@ const router = createBrowserRouter([
         ),
         loader: ({params}) => fetch(`https://visa-navigator-portal-server-five.vercel.app/addedVisaData/${params.id}`)
 
-      },
-      {
-        path: "/add-visa",
-        element: (
-          <PrivateRoute>
-            <AddVisa />
-          </PrivateRoute>
-        )
-      },
-      {
-        path: "/my-added-visas",
-        element: (
-          <PrivateRoute>
-            <MyAddedVisas />
-          </PrivateRoute>
-        ),
-        loader: () => fetch('https://visa-navigator-portal-server-five.vercel.app/addedVisaData')
-      },
-      {
-        // path: "/my-visa-applications/:email",
-        path: "/my-visa-applications/email",
-        element: (
-          <PrivateRoute>
-            <MyVisaApplications />
-          </PrivateRoute>
-        ),
-        // loader: ({params}) => fetch(`https://visa-navigator-portal-server-five.vercel.app/applicationData/email/${params.email}`)
       },
     ]
   }
