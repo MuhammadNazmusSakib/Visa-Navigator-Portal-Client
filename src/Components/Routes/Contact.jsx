@@ -33,7 +33,7 @@ const Contact = () => {
                         ></textarea>
                         <button
                             type="submit"
-                            className="w-full py-3 bg-red-500 text-white font-semibold rounded hover:bg-red-600"
+                            className="w-full py-3 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600"
                         >
                             SEND MESSAGE
                         </button>
@@ -46,7 +46,7 @@ const Contact = () => {
                         <h3 className="font-bold text-3xl pb-6">Contact Information</h3>
                         <div className="grid grid-col-1 sm:grid-cols-2 gap-8 py-5">
                             <div className="flex items-center gap-4">
-                                <div className="text-red-500 text-5xl">
+                                <div className="text-blue-500 text-5xl">
                                     <FaSquarePhone />
                                 </div>
                                 <div>
@@ -55,7 +55,7 @@ const Contact = () => {
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
-                                <div className="text-red-500 text-5xl">
+                                <div className="text-blue-500 text-5xl">
                                     <MdEmail />
                                 </div>
                                 <div>
@@ -64,7 +64,7 @@ const Contact = () => {
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
-                                <div className="text-red-500 text-5xl">
+                                <div className="text-blue-500 text-5xl">
                                     <FaLocationDot />
                                 </div>
                                 <div>
@@ -73,7 +73,7 @@ const Contact = () => {
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
-                                <div className="text-red-500 text-5xl">
+                                <div className="text-blue-500 text-5xl">
                                     <IoTime />
                                 </div>
                                 <div>
@@ -88,16 +88,16 @@ const Contact = () => {
                     <div>
                         <h3 className="font-bold text-3xl mt-12 mb-4">Follow The Social Media:</h3>
                         <div className="flex gap-4 py-5">
-                            <div  className="text-red-500 text-5xl cursor-pointer">
+                            <div  className="text-blue-500 text-5xl cursor-pointer">
                             <FaFacebookSquare />
                             </div>
-                            <div href="#" className="text-red-500 text-5xl cursor-pointer">
+                            <div href="#" className="text-blue-500 text-5xl cursor-pointer">
                                 <FaTwitterSquare/>
                             </div>
-                            <div href="#" className="text-red-500 text-5xl cursor-pointer">
+                            <div href="#" className="text-blue-500 text-5xl cursor-pointer">
                             <FaWhatsappSquare/>
                             </div>
-                            <div href="#" className="text-red-500 text-5xl cursor-pointer">
+                            <div href="#" className="text-blue-500 text-5xl cursor-pointer">
                                 <FaLinkedin/>
                             </div>
                         </div>

@@ -31,7 +31,7 @@ const Navbar = () => {
           <NavLink to="/contact" className="hover:underline">
             Contact
           </NavLink>
-          
+
           <div onClick={toggleTheme}>
             <label className="flex cursor-pointer gap-2">
               <svg
@@ -122,55 +122,30 @@ const Navbar = () => {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div className="lg:hidden bg-blue-700 space-y-2 px-6 py-4" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {/* <div onClick={toggleTheme}>
-            <label className="flex cursor-pointer gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round">
-                <circle cx="12" cy="12" r="5" />
-                <path
-                  d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
-              </svg>
-              <input type="checkbox" value="synthwave" className="toggle theme-controller" />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
-            </label>
-          </div> */}
-
           <NavLink to="/" className="block hover:underline">
             Home
           </NavLink>
           <NavLink to="/all-visas" className="block hover:underline">
             All Visas
           </NavLink>
-          <NavLink to="/my-profile/add-visa" className="block hover:underline">
-            Add Visa
+          <NavLink to="/contact" className="block hover:underline">
+            Contact
           </NavLink>
-          <NavLink to="/my-profile/my-added-visas" className="block hover:underline">
-            My Added Visas
+          <NavLink to="/about-us" className="block hover:underline">
+            About
           </NavLink>
-          <NavLink to={`/my-profile/my-visa-applications/email`} className="block hover:underline">
-            My Visa Applications
-          </NavLink>
+
           {user ? (
             <div className="flex flex-col items-start space-y-2">
+              <NavLink to="/my-profile/add-visa" className="block hover:underline">
+                Add Visa
+              </NavLink>
+              <NavLink to="/my-profile/my-added-visas" className="block hover:underline">
+                My Added Visas
+              </NavLink>
+              <NavLink to={`/my-profile/my-visa-applications/email`} className="block hover:underline">
+                My Visa Applications
+              </NavLink>
               {/* <div className="flex items-center space-x-2">
                 <img
                   src={user.photoURL}

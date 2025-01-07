@@ -54,7 +54,7 @@ const {user} = useContext(Contex)
       <h1 className="text-3xl font-bold text-center mb-6">Add Visa</h1>
       <form
         onSubmit={handleSubmit}
-        className="max-w-xl mx-auto bg-gray-300 text-black shadow-md rounded p-6"
+        className="max-w-7xl mx-auto bg-gray-300 text-black shadow-md rounded p-6"
       >
         <div className="mb-4">
           <label className="block font-semibold mb-2">Country Image URL</label>
