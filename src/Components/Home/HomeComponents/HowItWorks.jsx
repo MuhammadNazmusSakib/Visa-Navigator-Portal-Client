@@ -18,7 +18,7 @@ const HowItWorks = () => {
           </div>
           {/* Description */}
           <div className="lg:w-1/2 text-left">
-            <div className="list-disc pl-6 text-lg space-y-4">
+            <div className="list-disc lg:pl-6 text-lg space-y-4">
               <p>
                 Explore a wide range of destinations around the globe. Whether
                 you're planning to study, work, or travel for leisure, we
