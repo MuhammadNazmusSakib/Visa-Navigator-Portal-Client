@@ -9,7 +9,7 @@ const HowItWorks = () => {
 
   return (
     <div className={`max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-16 ${theme === 'dark' ? '' : 'bg-blue-50'}`}>
-      <div className="container mx-auto text-center">
+      <div className=" text-center">
         <h2 className="text-4xl sm:text-5xl font-bold mb-8">How It Works</h2>
         <div className="flex flex-col lg:flex-row items-center gap-8 justify-center">
           {/* Animation */}
