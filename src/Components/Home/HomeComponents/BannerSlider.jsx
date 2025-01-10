@@ -29,7 +29,7 @@ const Banner = () => {
     ];
   
     return (
-      <div className="banner w-full bg-gray-100">
+      <div className="max-w-screen-2xl mx-auto banner w-full bg-gray-100">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           navigation

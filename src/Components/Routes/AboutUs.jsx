@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="max-w-8xl mx-auto p-4 sm:p-6 lg:p-10">
+    <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-10">
       <div className="flex flex-col justify-between lg:flex-row items-center ">
         {/* Left Side: Image */}
         <div className="w-full lg:w-1/2">

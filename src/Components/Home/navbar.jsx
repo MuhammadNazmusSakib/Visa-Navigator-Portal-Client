@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-blue-600 text-white sticky top-0 z-50 shadow-lg">
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
         {/* Logo */}
         <Link to="/" className="flex text-xl font-bold">
 

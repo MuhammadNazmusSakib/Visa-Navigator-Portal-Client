@@ -18,7 +18,7 @@ const LatestVisas = () => {
 
   return (
     <div className={`${theme === 'dark' ? '' : 'bg-blue-50'}`}>
-      <div className="py-8 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl sm:text-5xl font-bold text-center mb-6">Latest Visas</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
           {visas.map((visa) => (
